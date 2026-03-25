@@ -2,7 +2,7 @@
 
 **Turno** is a modern mobile hub for classic tabletop games — built for fast matches, clean UX, and scalable multiplayer architecture.
 
-## 🎯 Vision
+## Vision
 
 Turno is not just a collection of games.
 
@@ -13,7 +13,7 @@ It is a unified platform where players can:
 - track progress and stats
 - enjoy a clean, modern mobile experience
 
-## 🧩 MVP Scope
+## MVP Scope
 
 Initial release includes:
 
@@ -28,7 +28,7 @@ Core features:
 - Profile & stats
 - Basic social layer
 
-## 🧠 Principles
+## Principles
 
 Turno is built on:
 
@@ -39,31 +39,41 @@ Turno is built on:
 - Shared design system across all games
 - Scalable architecture
 
-## 🏗️ Project Structure
+## Project Structure
 
-apps/mobile # mobile application (Flutter planned)
-packages/ui # shared UI components
-packages/game-core # game logic engines
-packages/utils # shared utilities
+```text
+apps/
+  mobile/         # Flutter app shell and UI foundation
 
-docs/ # product, UX, and architecture documentation
-assets/ # brand assets (logo, icons, etc.)
+packages/
+  ui/             # shared UI components
+  game-core/      # game logic engines
+  utils/          # shared utilities
 
+docs/             # product, UX, and architecture documentation
+assets/           # brand assets (logo, icons, etc.)
+```
 
-## 🚀 Status
+## Current App Status
+
+The initial Flutter application shell now lives in `apps/mobile`.
+It currently provides the navigation foundation, theme setup, and placeholder feature screens for the mobile experience.
+
+## Status
 
 Project is in early development stage.
 
 Current focus:
 - brand system
+- mobile app shell foundation
 - repository structure
 - MVP definition
 - architecture planning
 
-## 🤝 Contributing
+## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md)
 
-## 📄 License
+## License
 
 MIT
