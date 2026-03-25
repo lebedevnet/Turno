@@ -6,10 +6,14 @@ class SectionBlock extends StatelessWidget {
     super.key,
     required this.title,
     required this.child,
+    this.actionLabel,
+    this.onAction,
   });
 
   final String title;
   final Widget child;
+  final String? actionLabel;
+  final VoidCallback? onAction;
 
   @override
   Widget build(BuildContext context) {
@@ -18,25 +22,25 @@ class SectionBlock extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          title,
-          style: theme.textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(height: AppSpacing.sm),
-        Container(
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: theme.colorScheme.surface,
-            borderRadius: BorderRadius.circular(20),
-            border: Border.all(
-              color: theme.colorScheme.outlineVariant.withOpacity(0.4),
+        Row(
+          children: [
+            Expanded(
+              child: Text(
+                title,
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
             ),
-          ),
-          padding: const EdgeInsets.all(AppSpacing.md),
-          child: child,
+            if (actionLabel != null && onAction != null)
+              TextButton(
+                onPressed: onAction,
+                child: Text(actionLabel!),
+              ),
+          ],
         ),
+        const SizedBox(height: AppSpacing.md),
+        child,
       ],
     );
   }
